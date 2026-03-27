@@ -124,7 +124,28 @@ export function LiveStream() {
             <div ref={commentsEndRef}></div>
           </div>
 
-          {/* 配信者情報 */}
+          {/* 配信者情報 PCのみ */}
+          <Link
+            to={`/profile/${stream.performer.id}`}
+            className="livestream-performer-pc"
+          >
+            <img
+              src={stream.performer.avatar}
+              alt={stream.performer.name}
+              className="livestream-performer-pc-avatar"
+              style={{ objectFit: 'cover' }}
+            />
+            <div className="livestream-performer-pc-info">
+              <div className="livestream-performer-pc-name-wrap">
+                <h3 className="livestream-performer-pc-name">{stream.performer.name}</h3>
+              </div>
+            </div>
+            <button className="livestream-follow-btn">
+              フォロー
+            </button>
+          </Link>
+
+          {/* 配信者情報 共通 */}
           <Link
             to={`/profile/${stream.performer.id}`}
             className="livestream-performer"
@@ -158,7 +179,7 @@ export function LiveStream() {
             >
               <Heart className="livestream-action-icon" />
             </button>
-            <div style={{ position: 'relative' }}>
+            <div className="livestream-action-icon-primary-btn" style={{ position: 'relative' }}>
               <button
                 onClick={() => {
                   setShowGiftTooltip(false);
@@ -357,39 +378,41 @@ export function LiveStream() {
       )}
 
       {/* 投げ銭メニュー */}
-      {showGiftMenu && (
-        <div className="livestream-gift-menu">
-          <div className="livestream-gift-menu-content">
-            <div className="livestream-gift-menu-header">
-              <h3 className="livestream-gift-menu-title">応援する</h3>
-              <button
-                onClick={() => setShowGiftMenu(false)}
-                className="livestream-gift-menu-close"
+      <div className={`
+        livestream-gift-menu
+        ${showGiftMenu ? 'block' : 'hidden'}
+        lg:!block
+      `}>
+        <div className="livestream-gift-menu-content">
+          <div className="livestream-gift-menu-header">
+            <h3 className="livestream-gift-menu-title">応援する</h3>
+            <button
+              onClick={() => setShowGiftMenu(false)}
+              className="livestream-gift-menu-close"
+            >
+              <X style={{ width: '1.5rem', height: '1.5rem' }} />
+            </button>
+          </div>
+          <div className="livestream-gift-grid">
+            {mockGifts.map((gift) => (
+              <Link
+                key={gift.id}
+                to={`/gift/${stream.id}/${gift.id}`}
+                className="livestream-gift-item"
               >
-                <X style={{ width: '1.5rem', height: '1.5rem' }} />
-              </button>
-            </div>
-            <div className="livestream-gift-grid">
-              {mockGifts.map((gift) => (
-                <Link
-                  key={gift.id}
-                  to={`/gift/${stream.id}/${gift.id}`}
-                  className="livestream-gift-item"
-                >
-                  <span className="livestream-gift-icon">{gift.icon}</span>
-                  <p className="livestream-gift-name">{gift.name}</p>
-                  <p className="livestream-gift-price">{gift.price}</p>
-                </Link>
-              ))}
-            </div>
-            <div style={{ padding: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', marginTop: '1rem' }}>
-              <p style={{ color: 'white', fontSize: '1rem', textAlign: 'center' }}>
-                コイン残高：<span style={{ fontWeight: 'bold', color: '#E7A3FE' }}>3762</span>コイン
-              </p>
-            </div>
+                <span className="livestream-gift-icon">{gift.icon}</span>
+                <p className="livestream-gift-name">{gift.name}</p>
+                <p className="livestream-gift-price">{gift.price}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="livestream-gift-coin-container" style={{ padding: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', marginTop: '1rem' }}>
+            <p className="livestream-gift-total-coin" style={{ color: 'white', fontSize: '1rem', textAlign: 'center' }}>
+              コイン残高：<span className="livestream-gift-total-coin-num" style={{ fontWeight: 'bold', color: '#E7A3FE' }}>3762</span>コイン
+            </p>
           </div>
         </div>
-      )}
+      </div>
 
       {/* 配信終了メッセージ */}
       {remainingTime === 0 && (

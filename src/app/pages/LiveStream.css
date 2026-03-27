@@ -190,6 +190,11 @@
   white-space: nowrap;
 }
 
+.livestream-performer-pc {
+  display: none;
+
+}
+
 .livestream-follow-btn {
   padding: 0.5rem 1rem;
   background: linear-gradient(to right, #e7a3fe, #fc4acb);
@@ -367,6 +372,7 @@
   z-index: 50;
 }
 
+
 .livestream-gift-menu-content {
   background-color: var(--card);
   border-top-left-radius: 1rem;
@@ -376,6 +382,10 @@
   width: 100%;
   max-height: 70vh;
   overflow-y: auto;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0);
 }
 
 .livestream-gift-menu-header {
@@ -456,5 +466,266 @@
   }
   50% {
     transform: translateY(-8px);
+  }
+}
+
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+  .livestream-bg {
+    right: auto;
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 450px;
+    width: 100%;
+    height: 87.5svh;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+}
+@media (min-width: 1024px) {
+  .livestream-bottom {
+    height: 100svh;
+  }
+  .livestream-content {
+    z-index: 2;
+  }
+  .livestream-topbar {
+    position: absolute;
+    top: 6.2svh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+  }
+  .livestream-btn {
+    top: -3svh;
+    left: -33px;
+    position: relative;
+    display: grid;
+    place-content: center;
+    width: 48px;
+    height: 48px;
+    background: #000;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .livestream-btn-icon {
+    transform: scale(1.4);
+  }
+  .livestream-action-icon-primary-btn {
+    position: fixed !important;
+    top: 26svh;
+    left: 10px;
+  }
+  .livestream-action-btn-primary {
+    display: none;
+  }
+  .livestream-action-btn {
+    width: 40px;
+    height: 40px;
+    background: #3A3636;
+    border-radius: 8px;
+  }
+  .livestream-input {
+    height: 40px;
+    background: #3A3636;
+    border-radius: 8px;
+  }
+  .livestream-comments {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 400px;
+    width: 26%;
+    max-height: unset;
+    height: 100lvh;
+    padding: 34px 13px;
+    background: #000000;
+  }
+  .livestream-comment {
+    padding: 0.25rem 0.75rem;
+  }
+  .livestream-comment-avatar {
+    width: 33px;
+    height: 33px;
+  }
+  .livestream-comment-text {
+    font-size: 0.9375rem;
+  }
+  .livestream-comment-user {
+    display: block;
+    font-weight: 400;
+    line-height: 1.33;
+  }
+  .livestream-actions {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-width: 400px;
+    width: 26%;
+    padding: 24px 22px;
+    gap: 5px;
+  }
+  .livestream-action-icon {
+    width: 18px ;
+    height: 18px;
+  }
+  .livestream-gift-menu {
+    top: 22.8svh;
+    left: 10px;
+    background-color: transparent;
+    backdrop-filter: none;
+    width: 270px;
+    padding-left: 0;
+    z-index: 1;
+  }
+  .livestream-gift-menu-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 88px;
+    width: 270px;
+    height: 64.5svh;
+    padding: 0;
+    left: 0;
+    top: auto;
+    transform: none;
+    overflow: hidden;
+    border: 2px solid var(--ring);
+    background: #000;
+    border-radius: 18px;
+  }
+  .livestream-gift-grid {
+    grid-template-columns: repeat(3,1fr);
+    gap: 1em 0.5em;
+    padding: 0 1em 2em;
+    overflow-y: scroll;
+  }
+  .livestream-gift-item {
+    background: transparent;
+    padding: 0;
+    gap: 5px;
+  }
+  .livestream-gift-name {
+    font-size: 10px;
+  }
+  .livestream-performer {
+    position: absolute;
+    top: auto;
+    bottom: 5svh;
+    left: -1px !important;
+    width: 452px;
+    margin-top: 0;
+    padding: 0px 25px 28px;
+    backdrop-filter: none;
+    background: transparent linear-gradient(180deg, #00000000 0%, #221F1F 100%) 0% 0% no-repeat padding-box;
+  }
+  .livestream-performer-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .livestream-performer-name-wrap {
+    margin-bottom: 0;
+    margin-left: 0.5em;
+    font-size: 16px;
+  }
+  .livestream-performer-name {
+    font-size: 19px;
+  }
+
+  .livestream-performer-pc {
+    position: fixed;
+    top: 8svh;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    width: 270px;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .livestream-performer-pc-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    border: 2px solid var(--primary-solid);
+  }
+
+  .livestream-performer-pc-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .livestream-performer-pc-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .livestream-performer-pc-name {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+  }
+
+  .livestream-performer-pc-title {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+
+  .livestream-follow-btn {
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  .livestream-gift-menu-close {
+    display: none;
+  }
+  .livestream-gift-menu-header {
+    margin-bottom: 0;
+    padding: 1.8em 1.5em 0.5em;
+  }
+  .livestream-gift-coin-container {
+    margin-top: 0 !important;
+    display: grid;
+    align-items: center;
+    place-content: center;
+    border-top-color: #625F5F;
+  }
+  .livestream-gift-total-coin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px !important;
+  }
+  .livestream-gift-total-coin-num {
+    font-size: 2.9em;
+    padding: 0 0.2em 0 0.5em;
+    color: #fff !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .livestream-gift-menu {
+    left: 0;
+    width: 27.1%;
+    padding-left: 8.73%;
+  }
+  .livestream-gift-menu-content {
+    width: 290px;
+
+  }
+  .livestream-performer-pc {
+    left: 8.73%;
+    width: 290px;
+  }
+  .livestream-action-icon-primary-btn {
+    left: 9.73%;
   }
 }
