@@ -97,7 +97,7 @@ export function LiveStream() {
               </div>
             )}
           </div>
-          <div className="text-white text-2xl font-bold" style={{ minWidth: '80px', textAlign: 'right', paddingRight: '1rem' }}>
+          <div className="text-white text-2xl font-bold font-family-bh" style={{ minWidth: '80px', textAlign: 'right', paddingRight: '1rem' }}>
             {formatTime(remainingTime)}
           </div>
         </div>

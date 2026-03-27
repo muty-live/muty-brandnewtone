@@ -139,6 +139,10 @@
   overflow: hidden;
 }
 
+.font-family-bh {
+  font-family: var(--font-family-bahnschrift);
+}
+
 /* カラー */
 .text-white {
   color: #ffffff;

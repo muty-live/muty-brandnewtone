@@ -446,9 +446,15 @@
 }
 
 .livestream-gift-price {
-  font-size: 0.75rem;
+  font-family: var(--font-family-bahnschrift);
+  font-size: 1rem;
   color: var(--primary-solid);
   font-weight: 700;
+}
+
+.livestream-gift-total-coin-num {
+  font-size: 1.5em;
+  font-family: var(--font-family-bahnschrift);
 }
 
 @keyframes pulse {
