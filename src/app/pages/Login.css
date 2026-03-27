@@ -1,0 +1,17 @@
+.concept-button {
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: opacity 0.2s ease;
+}
+
+.concept-button:hover {
+  opacity: 0.9;
+}

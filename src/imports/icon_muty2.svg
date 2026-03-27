@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 797.84 644.88">
+  <!-- Generator: Adobe Illustrator 29.0.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 192)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#_名称未設定グラデーション_402);
+        fill-rule: evenodd;
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_402" data-name="名称未設定グラデーション 402" x1=".31" y1="322.24" x2="798.15" y2="322.24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6a5ff"/>
+      <stop offset=".69" stop-color="#ff4acd"/>
+      <stop offset="1" stop-color="#fc4acb"/>
+    </linearGradient>
+  </defs>
+  <path class="st0" d="M80.1,230.11l239.36,138.19,79.77-46.06c-106.38-61.43-212.77-122.85-319.13-184.25v92.13ZM319.46,368.3l-79.79,46.06-159.56-92.12v92.12l79.77,46.06L.31,552.56V-.2l478.71,276.38,79.77-46.06,159.56,92.13v-92.13l-79.77-46.06,159.56-92.12v552.76l-478.69-276.38ZM479.02,276.18l-79.79,46.06c106.38,61.43,212.77,122.83,319.15,184.25v-92.13l-239.36-138.19Z"/>
+</svg>

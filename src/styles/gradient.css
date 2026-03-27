@@ -1,0 +1,47 @@
+/* グラデーション用カスタムクラス */
+
+/* 背景グラデーション */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #e7a3fe 0%, #fc4acb 100%);
+}
+
+/* LIVEタグ用グラデーション */
+.bg-gradient-live {
+  background: linear-gradient(135deg, #e7a3fe 0%, #fc4acb 100%);
+}
+
+/* ボタン用グラデーション */
+.bg-gradient-button {
+  background: linear-gradient(135deg, #e7a3fe 0%, #fc4acb 100%);
+}
+
+.bg-gradient-button:hover {
+  background: linear-gradient(135deg, #d893ed 0%, #eb39ba 100%);
+}
+
+/* テキストグラデーション */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #e7a3fe 0%, #fc4acb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ボーダーグラデーション用 */
+.border-gradient-primary {
+  position: relative;
+}
+
+.border-gradient-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #e7a3fe 0%, #fc4acb 100%);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}

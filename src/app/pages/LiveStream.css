@@ -1,0 +1,460 @@
+/* モバイルレイアウト（デフォルト） */
+.livestream-container {
+  min-height: 100vh;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.livestream-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.livestream-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.livestream-bg-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.livestream-content {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.livestream-topbar {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.livestream-btn {
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+  transition: background-color 150ms;
+}
+
+.livestream-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.livestream-btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+
+.livestream-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: linear-gradient(to right, #e7a3fe, #fc4acb);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.livestream-live-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--background);
+  fill: var(--background);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.livestream-live-text {
+  color: var(--background);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.livestream-center {
+  flex: 1;
+}
+
+.livestream-bottom {
+  padding: 1rem;
+}
+
+.livestream-bottom > * + * {
+  margin-top: 1rem;
+}
+
+.livestream-comments {
+  max-height: 12rem;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.livestream-comments::-webkit-scrollbar {
+  display: none;
+}
+
+.livestream-comments > * + * {
+  margin-top: 0.5rem;
+}
+
+.livestream-comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.livestream-comment-avatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.livestream-comment-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.livestream-comment-text {
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.livestream-comment-user {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.livestream-performer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+.livestream-performer-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  border: 2px solid var(--primary-solid);
+}
+
+.livestream-performer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.livestream-performer-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.livestream-performer-name {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.livestream-performer-title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.livestream-follow-btn {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #e7a3fe, #fc4acb);
+  color: var(--primary-foreground);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition: opacity 150ms;
+}
+
+.livestream-follow-btn:hover {
+  opacity: 0.9;
+}
+
+.livestream-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.livestream-action-btn {
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+  transition: background-color 150ms;
+}
+
+.livestream-action-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.livestream-action-btn-primary {
+  padding: 0.75rem;
+  background: linear-gradient(to right, #e7a3fe, #fc4acb);
+  border-radius: 0.5rem;
+  transition: opacity 150ms;
+}
+
+.livestream-action-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.livestream-action-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+
+.livestream-action-icon-primary {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--primary-foreground);
+}
+
+.livestream-input-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.livestream-input {
+  width: 100%;
+  padding: 0.75rem 3rem 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+  color: #ffffff;
+  outline: none;
+}
+
+.livestream-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.livestream-input:focus {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.livestream-send-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 150ms;
+}
+
+.livestream-send-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.livestream-send-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ffffff;
+}
+
+.livestream-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.livestream-popup-content {
+  background-color: var(--card);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 24rem;
+  width: 100%;
+}
+
+.livestream-popup-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.livestream-popup-text {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+}
+
+.livestream-popup-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.livestream-popup-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 150ms, opacity 150ms;
+  text-align: center;
+  text-decoration: none;
+}
+
+.livestream-popup-btn-secondary {
+  background-color: var(--secondary);
+}
+
+.livestream-popup-btn-secondary:hover {
+  background-color: rgba(var(--secondary-rgb), 0.8);
+}
+
+.livestream-popup-btn-primary {
+  background: linear-gradient(to right, #e7a3fe, #fc4acb);
+  color: var(--primary-foreground);
+  font-weight: 700;
+}
+
+.livestream-popup-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.livestream-gift-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 50;
+}
+
+.livestream-gift-menu-content {
+  background-color: var(--card);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.livestream-gift-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.livestream-gift-menu-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.livestream-gift-menu-close {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 150ms;
+}
+
+.livestream-gift-menu-close:hover {
+  background-color: var(--secondary);
+}
+
+.livestream-gift-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.livestream-gift-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: var(--secondary);
+  border-radius: 0.75rem;
+  transition: background-color 150ms;
+  text-decoration: none;
+}
+
+.livestream-gift-item:hover {
+  background-color: rgba(var(--secondary-rgb), 0.8);
+}
+
+.livestream-gift-icon {
+  font-size: 2.25rem;
+}
+
+.livestream-gift-name {
+  font-size: 0.75rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.livestream-gift-price {
+  font-size: 0.75rem;
+  color: var(--primary-solid);
+  font-weight: 700;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes floatTooltip {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
