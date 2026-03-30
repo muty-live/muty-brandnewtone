@@ -27,29 +27,41 @@
   top: -14%;
   left: 20%;
   display: block;
-  width: 250px;
-  height: 288px;
+  width: 60.3%;
+  aspect-ratio: 250/288;
 }
 
 .loading-logo-right {
   position: absolute;
-  bottom: -14.7%;
+  bottom: -14.6%;
   left: auto;
   right: 19.7%;
   display: block;
-  width: 250px;
-  height: 288px;
-
+  width: 60.3%;
+  aspect-ratio: 250/288;
 }
 
 .loading-logo-text {
   position: absolute;
-  top: 70%;
-  left: 50.2%;
-  transform: translate(-50%, -50%);
+  top: auto;
+  bottom: -14.5%;
+  left: 50.8%;
+  transform: translate(-50%, 0);
   display: block;
   opacity: 0;
+  width: 78%;
+  aspect-ratio: 324 / 67;
 }
+
+@media (max-width: 767px) {
+  .loading-logo-container {
+    aspect-ratio: 414/335;
+    max-width: 325px;
+    width: 60%;
+    height: auto;
+  }
+}
+
 
 .loading-logo-left.is-action {
   animation: action-left 1.2s cubic-bezier(0.66, 0.01, 0.02, 1) forwards;
