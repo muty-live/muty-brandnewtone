@@ -6,6 +6,10 @@
   overflow: hidden;
 }
 
+.livestream-header {
+  display: none;
+}
+
 .livestream-bg {
   position: absolute;
   top: 0;
@@ -492,6 +496,10 @@
   }
 }
 @media (min-width: 1024px) {
+  .livestream-header {
+    display: block;
+  }
+
   .livestream-bottom {
     height: 100svh;
   }

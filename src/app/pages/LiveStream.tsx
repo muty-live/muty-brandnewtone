@@ -4,6 +4,8 @@ import { useAuth } from '../context/AuthContext';
 import { X, Heart, Gift, Share2, MoreVertical, Send, Zap } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import './LiveStream.css';
+import logo from '../../assets/7518b57820fb1e403ea3c90ebd7d5029c977eed2.png';
+
 
 export function LiveStream() {
   const { id } = useParams();
@@ -69,6 +71,14 @@ export function LiveStream() {
 
   return (
     <div className="livestream-container">
+
+      {/* ヘッダー */}
+      <header className="fixed top-0 z-50 livestream-header">
+        <div className="px-4 h-16 flex items-center justify-between">
+          <img src={logo} alt="MUTY" className="h-8" />
+        </div>
+      </header>
+
       {/* 背景動画エリア */}
       <div className="livestream-bg">
         <img
