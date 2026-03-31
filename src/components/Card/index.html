@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Card Component Preview</title>
+    <style>
+        /* shadcn/uiの基本色（変数の定義） */
+        :root {
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --border: 214.3 31.8% 91.4%;
+        }
+        body { background-color: #f3f4f6; padding: 50px; }
+        
+        /* tsx内のクラスを補完するスタイル */
+        .bg-card { background-color: hsl(var(--card)); }
+        .text-card-foreground { color: hsl(var(--card-foreground)); }
+        .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+        .border { border: 1px solid hsl(var(--border)); }
+    </style>
+</head>
+<body>
+
+    <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm w-full max-w-md mx-auto">
+        
+        <div class="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6">
+            <h4 class="leading-none font-bold text-xl">カードのタイトル</h4>
+            <p class="text-muted-foreground text-sm">ここに説明文が入ります。Figma Makeから出力された構成です。</p>
+        </div>
+
+        <div class="px-6">
+            <p>メインコンテンツエリアです。ここに画像やテキストを配置します。</p>
+        </div>
+
+        <div class="flex items-center px-6 pb-6">
+            <button class="bg-black text-white px-4 py-2 rounded-md text-sm">Footer Button</button>
+        </div>
+    </div>
+
+</body>
+</html>

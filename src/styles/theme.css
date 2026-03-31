@@ -44,6 +44,11 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(230, 174, 228, 0.15);
   --sidebar-ring: #e7a3fe;
+  
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
 }
 
 .dark {
