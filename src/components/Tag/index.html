@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag / Badge コンポーネント</title>
+  <link rel="stylesheet" href="../../styles/index.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- ユーティリティ（確認用） --- */
+    .sample-section {
+      padding: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .sample-section h2 {
+      font-size: 14px;
+      color: var(--color-muted-foreground);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .sample-section--badge-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sample-section">
+    <h2>Live配信タグ</h2>
+    <div class="tag tag--live">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tag--live-icon">
+        <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+      </svg>
+      <span class="tag--live-text">LIVE</span>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <h2>Live配信中</h2>
+    <div class="tag tag--live-now">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tag--live-now-icon">
+        <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+      </svg>
+      <span class="tag--live-now-text">LIVE</span>
+    </div>
+
+  </div>
+
+  <div class="sample-section">
+    <h2>配信予定日時</h2>
+    <div class="tag tag--date">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tag--date-icon">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <span class="tag--date-taxt">6/2 18:00</span>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <h2>通知カテゴリー</h2>
+    <span class="tag--notice">お知らせ</span>
+  </div>
+
+  <div class="sample-section">
+    <h2>チェックマークバッヂ</h2>
+    <div class="sample-section--badge-container">
+      <div class="badge--check">
+        <svg class="badge--check-icon" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <h2>通知バッヂ</h2>
+    <div class="sample-section--badge-container">
+      <div class="badge--notice">
+        <span class="badge--notice-text">3</span>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>
