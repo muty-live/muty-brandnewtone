@@ -531,10 +531,17 @@
   .livestream-action-icon-primary-btn {
     position: fixed !important;
     top: 26svh;
-    left: 10px;
+    left: 210px;
   }
   .livestream-action-btn-primary {
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+  }
+  .livestream-action-btn-primary-fukidashi {
+    right: auto;
+    left: 20px;
+    border-top-color: #e7a3fe !important;
   }
   .livestream-action-btn {
     width: 40px;
@@ -740,6 +747,6 @@
     width: 290px;
   }
   .livestream-action-icon-primary-btn {
-    left: 9.73%;
+    left: calc(8.73% + 220px);
   }
 }

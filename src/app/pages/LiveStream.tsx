@@ -149,6 +149,7 @@ export function LiveStream() {
               <div className="livestream-performer-pc-name-wrap">
                 <h3 className="livestream-performer-pc-name">{stream.performer.name}</h3>
               </div>
+              <p className="livestream-performer-title">{stream.title}</p>
             </div>
             <button className="livestream-follow-btn">
               フォロー
@@ -179,16 +180,23 @@ export function LiveStream() {
 
           {/* アクションバー */}
           <div className="livestream-actions">
-            <button
-              onClick={() => {
-                if (!isAuthenticated) {
-                  setShowLoginPopup(true);
-                }
-              }}
-              className="livestream-action-btn"
-            >
-              <Heart className="livestream-action-icon" />
-            </button>
+            <div className="livestream-input-wrap">
+              <input
+                type="text"
+                placeholder={isAuthenticated ? 'コメントを入力...' : 'ログインしてコメント'}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+                onClick={() => !isAuthenticated && setShowLoginPopup(true)}
+                className="livestream-input"
+              />
+              <button
+                onClick={handleSendMessage}
+                className="livestream-send-btn"
+              >
+                <Send className="livestream-send-icon" />
+              </button>
+            </div>
             <div className="livestream-action-icon-primary-btn" style={{ position: 'relative' }}>
               <button
                 onClick={() => {
@@ -210,7 +218,7 @@ export function LiveStream() {
                 <div style={{
                   position: 'absolute',
                   bottom: 'calc(100% + 10px)',
-                  left: '0',
+                  right: '0',
                   background: 'linear-gradient(135deg, #e7a3fe 0%, #fc4acb 100%)',
                   borderRadius: '12px',
                   padding: '12px 16px',
@@ -248,7 +256,7 @@ export function LiveStream() {
                     marginBottom: '4px',
                     marginTop: '0',
                   }}>
-                    300コインプレゼント
+                    400コインプレゼント
                   </p>
                   <p style={{
                     color: 'white',
@@ -259,102 +267,18 @@ export function LiveStream() {
                     ギフトを送ると名前を呼んでもらえるかも？
                   </p>
                   {/* 吹き出しの矢印 */}
-                  <div style={{
+                  <div className="livestream-action-btn-primary-fukidashi" style={{
                     position: 'absolute',
                     bottom: '-6px',
-                    left: '20px',
+                    right: '20px',
                     width: '0',
                     height: '0',
                     borderLeft: '8px solid transparent',
                     borderRight: '8px solid transparent',
-                    borderTop: '8px solid #e7a3fe',
+                    borderTop: '8px solid #f565d7',
                   }}></div>
                 </div>
               )}
-
-              {/* 2つ目のギフトツールチップ (3:00〜0:00) */}
-              {showSecondGiftTooltip && remainingTime <= 180 && remainingTime >= 0 && isAuthenticated && (
-                <div style={{
-                  position: 'absolute',
-                  bottom: 'calc(100% + 10px)',
-                  left: '0',
-                  background: 'linear-gradient(135deg, #e7a3fe 0%, #fc4acb 100%)',
-                  borderRadius: '12px',
-                  padding: '12px 16px',
-                  width: '240px',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
-                  zIndex: 1000,
-                  animation: 'floatTooltip 2s ease-in-out infinite',
-                }}>
-                  <button
-                    onClick={() => setShowSecondGiftTooltip(false)}
-                    style={{
-                      position: 'absolute',
-                      top: '8px',
-                      right: '8px',
-                      background: 'rgba(255, 255, 255, 0.2)',
-                      border: 'none',
-                      borderRadius: '50%',
-                      width: '20px',
-                      height: '20px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      color: 'white',
-                      fontSize: '12px',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    ×
-                  </button>
-                  <p style={{
-                    color: 'white',
-                    fontWeight: 'bold',
-                    fontSize: '15px',
-                    marginBottom: '4px',
-                    marginTop: '0',
-                  }}>
-                    100コインプレゼント！
-                  </p>
-                  <p style={{
-                    color: 'white',
-                    fontSize: '13px',
-                    margin: '0',
-                    lineHeight: '1.4',
-                  }}>
-                    ここまで見てくれたあなたにささやかなプレゼント
-                  </p>
-                  {/* 吹き出しの矢印 */}
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '-6px',
-                    left: '20px',
-                    width: '0',
-                    height: '0',
-                    borderLeft: '8px solid transparent',
-                    borderRight: '8px solid transparent',
-                    borderTop: '8px solid #e7a3fe',
-                  }}></div>
-                </div>
-              )}
-            </div>
-            <div className="livestream-input-wrap">
-              <input
-                type="text"
-                placeholder={isAuthenticated ? 'コメントを入力...' : 'ログインしてコメント'}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                onClick={() => !isAuthenticated && setShowLoginPopup(true)}
-                className="livestream-input"
-              />
-              <button
-                onClick={handleSendMessage}
-                className="livestream-send-btn"
-              >
-                <Send className="livestream-send-icon" />
-              </button>
             </div>
             
           </div>
