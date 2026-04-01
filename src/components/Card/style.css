@@ -1,0 +1,378 @@
+/* ============================================
+   Card コンポーネント
+   ============================================ */
+/* 
+.card {
+} */
+
+
+.card--notice {
+  display: block;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background-color: var(--secondary);
+  cursor: pointer;
+}
+.card--notice-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.card--notice-date {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--muted-foreground);
+}
+.card--notice-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.card--notice-comment {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--muted-foreground);
+}
+
+.card--concept {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background-color: var(--secondary);
+}
+.card--concept-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--spacing) * 12);
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #e7a3fe, #fc4acb);
+}
+.card--concept-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+.card--concept-title {
+  margin-bottom: 0.5rem;
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: 1.5;
+}
+.card--concept-comment {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--muted-foreground);
+}
+
+.card--streaming {
+  cursor: pointer;
+}
+.card--streaming:hover .card--streaming-image {
+  transform: scale(1.05);
+  transition-duration: 300ms;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card--streaming-inner {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: 0.5rem;
+  background-color: var(--secondary);
+  transition-duration: 300ms;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+}
+.card--streaming-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.card--streaming-image {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+  transition-duration: 300ms;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card--streaming-image-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, oklab(0 0 0 / 0.4) 100%);
+}
+.card--streaming-tag {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+}
+.card--streaming-streamer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem;
+}
+.card--streaming-streamer-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.card--streaming-streamer-avater {
+  height: 2.5rem;
+  width: 2.5rem;
+  object-position: center;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-color: #ffffff;
+}
+.card--streaming-streamer-data {
+  min-width: 0;
+  flex: 1;
+}
+.card--streaming-streamer-name {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+.card--streaming-streamer-nametext {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  font-weight: 700;
+  color: #ffffff;
+}
+.card--streaming-streamer-follower {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.card--streaming-comment {
+  color: #ffffff;
+  display: -webkit-box;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card--streaming-gap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.card--actress {
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background-color: var(--secondary);
+  overflow: hidden;
+}
+.card--actress-image-container {
+  aspect-ratio: 3 / 4;
+}
+.card--actress-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card--actress-info {
+  padding: 0.75rem;
+}
+.card--actress-name {
+  margin-bottom: calc(var(--spacing) * 1);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card--actress-comment {
+  display: -webkit-box;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--muted-foreground);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card--actress-follower {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.card--post {
+  padding: 1rem;
+  background-color: var(--secondary);
+  border-radius: 0.75rem;
+}
+.card--post-inner {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: calc(var(--spacing) * 3);
+}
+.card--post-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--primary);
+}
+.card--post-date {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  line-height: 1rem;
+}
+.card--post-image-conatiner {
+  position: relative;
+  margin-bottom: calc(var(--spacing) * 3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  aspect-ratio: var(--aspect-video);
+}
+.card--post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card--post-play {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card--post-play-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--spacing) * 12);
+  height: 3rem;
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+}
+.card--post-play-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #000000;
+  fill: var(--color-black);
+}
+.card--post-comment {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.card--post-action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted-foreground);
+}
+.card--post-action-block {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.card--post-action-icon {
+  width: 1rem;
+  height: 1rem;
+}
+.card--post-action-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.card--media {
+  position: relative;
+  background-color: var(--secondary);
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card--media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card--media-play {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card--media-play-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+}
+.card--media-play-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #000000;
+  fill: var(--color-black);
+}
+
+
+.card--popup-login {
+  background-color: var(--card);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 24rem;
+  width: 100%;
+}
+.card--popup-login-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.card--popup-login-text {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+}
+.card--popup-login-action {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 0.75rem;
+}
