@@ -1,0 +1,90 @@
+/* ============================================
+   Input コンポーネント
+   ============================================ */
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-block: calc(var(--spacing) * 3);
+  padding-inline: calc(var(--spacing) * 4);
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: var(--border);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+  background-color: var(--secondary);
+}
+
+.input--check {
+  margin-top: calc(var(--spacing) * 1);
+}
+.input--check-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.input--check-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.input--check-link {
+  color: var(--primary);
+}
+.input--check-link:hover {
+  text-decoration: underline;
+}
+
+.input--search {
+  padding-left: calc(var(--spacing) * 10);
+}
+.input--search-container {
+  position: relative;
+}
+.input--search-icon {
+  position: absolute;
+  top: calc(1 / 2 * 100%);
+  --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+  left: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--muted-foreground);
+}
+
+.input--comment {
+  flex: 1;
+  position: relative;
+}
+.input--comment-form {
+  width: 100%;
+  padding: 0.75rem 3rem 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+  color: #ffffff;
+  outline: none;
+}
+.input--comment-form::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.input--comment-form:focus {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.input--comment-send {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 150ms;
+}
+.input--comment-send:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.input--comment-send-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ffffff;
+}
