@@ -17,6 +17,7 @@ import { NewsDetail } from './pages/NewsDetail';
 import { Concept } from './pages/Concept';
 import { Actress } from './pages/Actress';
 import { Sitemap } from './pages/Sitemap';
+import { Loading } from './loading/Loading';
 
 export const router = createBrowserRouter([
   { path: '/', Component: Home },
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
   { path: '/concept', Component: Concept },
   { path: '/actress', Component: Actress },
   { path: '/sitemap', Component: Sitemap },
+  { path: '/loading', Component: Loading },
   {
     path: '*',
     Component: () => (

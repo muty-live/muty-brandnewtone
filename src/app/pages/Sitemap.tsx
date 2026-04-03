@@ -61,6 +61,13 @@ export function Sitemap() {
         { path: '/contact', label: 'お問い合わせ', description: 'サポートへのお問い合わせ' },
       ]
     },
+    {
+      title: 'ローディング',
+      icon: <Phone className="w-5 h-5" />,
+      links: [
+        { path: '/loading', label: 'ローディング画面', description: '' },
+      ]
+    },
   ];
 
   return (
@@ -125,6 +132,7 @@ export function Sitemap() {
             </section>
           ))}
         </div>
+
 
         {/* 注意事項 */}
         <div className="mt-8 p-6 bg-muted rounded-xl">
