@@ -90,11 +90,9 @@ export function Concept() {
           </Link>
         </div>
       </div>
-        <Link
-          to="/sitemap" className="mt-8"
-        >
-          サイトマップ
-        </Link>
+      
+      <Link to="/sitemap" className="mt-8">サイトマップ</Link>
+
     </div>
   );
 }

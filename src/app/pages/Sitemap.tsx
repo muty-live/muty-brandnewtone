@@ -63,9 +63,19 @@ export function Sitemap() {
     },
     {
       title: 'ローディング',
-      icon: <Phone className="w-5 h-5" />,
+      icon: <Settings className="w-5 h-5" />,
       links: [
         { path: '/loading', label: 'ローディング画面', description: '' },
+      ]
+    },
+    {
+      title: 'コンポーネント',
+      icon: <Settings className="w-5 h-5" />,
+      links: [
+        { path: '/card', label: 'カード', description: '' },
+        { path: '/button', label: 'ボタン', description: '' },
+        { path: '/tag', label: 'タグ、バッヂ', description: '' },
+        { path: '/input', label: 'フォーム要素', description: '' },
       ]
     },
   ];

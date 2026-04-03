@@ -18,6 +18,10 @@ import { Concept } from './pages/Concept';
 import { Actress } from './pages/Actress';
 import { Sitemap } from './pages/Sitemap';
 import { Loading } from './loading/Loading';
+import { Card } from './new-components/Card/Card';
+import { Button } from './new-components/Button/Button';
+import { Tag } from './new-components/Tag/Tag';
+import { Input } from './new-components/Input/Input';
 
 export const router = createBrowserRouter([
   { path: '/', Component: Home },
@@ -39,6 +43,10 @@ export const router = createBrowserRouter([
   { path: '/actress', Component: Actress },
   { path: '/sitemap', Component: Sitemap },
   { path: '/loading', Component: Loading },
+  { path: '/card', Component: Card },
+  { path: '/button', Component: Button },
+  { path: '/tag', Component: Tag },
+  { path: '/input', Component: Input },
   {
     path: '*',
     Component: () => (
